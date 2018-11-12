@@ -1,0 +1,19 @@
+<!doctype html>  
+<html lang="en">  
+    <head>
+    </head>
+    <body>
+        <h1>SNS Messages</h1>
+        <div id="messages"></div>
+         <script src="/jquery/dist/jquery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+    </body>
+        <script>  
+              var socket = io();
+              socket.on('connectToRoom',function(data) {
+                 $('#messages').text(data);
+                 $('#messages').append("<br/>");
+                  console.log("socket id" +socket.id);
+              });
+        </script>  
+</html> 
